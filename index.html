@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>MR X TOOLZ </title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+   <h1 id="mrx"> Mr X T00L </h1>  
+    
+   <h2 id="mr5">Min-Max Recharge 3999</h2> 
+   <h4 style="color: #e3c3c3;">Select game </h4> 
+   
+   <div class="container"> 
+    <div class="circle" style="background-image: url('5.jpg');">
+        <input type="checkbox" class="checkbox" id="game1">
+        <label for="game1">Game 1</label>
+    </div> 
+    <div class="circle" style="background-image: url('1.jpg');">
+        <input type="checkbox" class="checkbox" id="game2">
+        <label for="game2">Game 2</label>
+    </div> 
+    <div class="circle" style="background-image: url('3.jpg');">
+        <input type="checkbox" class="checkbox" id="game3">
+        <label for="game3">Game 3</label>
+    </div> 
+   </div> 
+   
+   <div class="container"> 
+    <div class="circle" style="background-image: url('4.jpg');">
+        <input type="checkbox" class="checkbox" id="game4">
+        <label for="game4">Game 4</label>
+    </div> 
+    <div class="circle" style="background-image: url('6.jpg');">
+        <input type="checkbox" class="checkbox" id="game5">
+        <label for="game5">Game 5</label>
+    </div> 
+    <div class="circle" style="background-image: url('7.jpg');">
+        <input type="checkbox" class="checkbox" id="game6">
+        <label for="game6">Game 6</label>
+    </div> 
+   </div>
+       
+  <input type="text" id="gameUID" placeholder="YOUR GAME UID"> 
+  <a id="rechargeLink" href="second.html">
+   <button id="rechargeBtn" disabled>Get Recharge</button>  
+   </a>
+
+   <script>
+         document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+        checkbox.addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.checkbox:checked');
+            var gameUID = document.getElementById('gameUID').value;
+            var rechargeBtn = document.getElementById('rechargeBtn');
+            if (gameUID.length >= 4 && /^\d+$/.test(gameUID) && checkboxes.length > 0) {
+                rechargeBtn.removeAttribute('disabled');
+            } else {
+                rechargeBtn.setAttribute('disabled', 'disabled');
+            }
+        });
+    });
+
+    document.getElementById('gameUID').addEventListener('input', function() {
+        var checkboxes = document.querySelectorAll('.checkbox:checked');
+        var gameUID = this.value;
+        var rechargeBtn = document.getElementById('rechargeBtn');
+        if (gameUID.length >= 4 && /^\d+$/.test(gameUID) && checkboxes.length > 0) {
+            rechargeBtn.removeAttribute('disabled');
+        } else {
+            rechargeBtn.setAttribute('disabled', 'disabled');
+        }
+    });
+   </script>
+</body> 
+</html>

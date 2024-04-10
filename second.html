@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Example</title>
+  <link rel="stylesheet" href="second.css">
+  <style>
+    /* CSS for background image */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('hacker.jpg'); /* Replace 'background_image.jpg' with your image path */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
+    }
+
+    /* CSS for input and button */
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 200px; /* Adjust width as needed */
+      color: black; /* Set font color to black */
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 20px; /* Adjust margin as needed */
+    }
+    
+    button {
+      display: grid; 
+      place-items: center; 
+      height: 12vh; 
+      width: 300px; 
+      font-size:28px;
+      text-align: center; 
+      padding-left: 240px ; 
+      padding-top: px; 
+      margin-top: 50px; 
+      margin-bottom: 50px; 
+      margin: 83px auto; 
+      padding: 35px; 
+      background-color: #2e24f0; 
+      border-radius:35px; 
+      box-shadow: 0px 0px 10px rgba(225, 255, , 1);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Centering the container */
+    .container {
+      text-align: center;
+      margin-bottom: 100px; /* Adjust margin as needed */
+      margin-left: 100px; /* Adjust margin as needed */
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    /* Style for input and button containers */
+    .input-container {
+      margin-bottom: 20px; /* Adjust margin as needed */
+    }
+  </style>
+</head>
+<body>
+  <h2 class="twenty-three">Only ₹299 Payment Accepted</h2>
+  <h3>Your Recharge Amount ₹3999</h3>
+  
+  <div class="container">
+    <img src="gr.jpg" alt="Description of the image">
+  </div>
+  
+  <div class="centered">
+    <!-- Input container -->
+    <div class="input-container">
+      <input type="text" id="inputCode" placeholder="ENTER UTR/REF Number">
+    </div>
+    
+    <!-- Button -->
+    <button id="rechargeBtn" disabled>RECHARGE</button>
+  </div>
+
+  <script>
+    document.getElementById('inputCode').addEventListener('input', function() {
+        var inputCode = this.value;
+        var rechargeBtn = document.getElementById('rechargeBtn');
+        if (inputCode.length >= 8) {
+            rechargeBtn.removeAttribute('disabled');
+        } else {
+            rechargeBtn.setAttribute('disabled', 'disabled');
+        }
+    });
+
+    document.getElementById('rechargeBtn').addEventListener('click', function() {
+        var inputCode = document.getElementById('inputCode').value;
+        if (inputCode.length !== 8) {
+            alert("Please fill correct details.");
+        } else {
+            alert("please fill correct details ");
+            // You can add more functionality here if needed
+        }
+    });
+  </script>
+</body>
+</html>
